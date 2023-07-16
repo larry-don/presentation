@@ -11,6 +11,7 @@ public class UserRepository {
 
 
     public void insert(User user) throws IOException {
-        SqlHelper.getSqlSession().insert("com.example.presentation.model.User.addUser",user);
+        //com.example.presentation.repository.user
+        SqlHelper.getSqlSession().insert("com.example.presentation.repository.UserRepository.addUser",user);
     }
 }

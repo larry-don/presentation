@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.presentation.repository.UserBalance">
+<mapper namespace="com.example.presentation.repository.UserBalanceRepository">
 
 
     <insert id="addUserBalance" parameterType="com.example.presentation.model.UserBalance">
-        insert into user_balance(name,balance) value(name,balance);
+        insert into user_balance(name,balance) value(#{name},#{balance});
     </insert>
 
 

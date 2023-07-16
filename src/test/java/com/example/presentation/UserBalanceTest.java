@@ -3,7 +3,6 @@ package com.example.presentation;
 import com.example.presentation.model.User;
 import com.example.presentation.service.UserBalanceService;
 import org.junit.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
