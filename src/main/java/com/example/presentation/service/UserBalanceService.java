@@ -7,6 +7,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 
 public interface UserBalanceService {
-    void addUserBalance(UserBalance userBalance) throws IOException;
-    void addUserBalanceAndUser(User user, BigDecimal balance) throws IOException;
+    void addUserBalance(UserBalance userBalance);
+    void addUserBalanceAndUser(User user, BigDecimal balance);
 }

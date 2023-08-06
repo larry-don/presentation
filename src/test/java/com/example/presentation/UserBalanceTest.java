@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserBalanceTest extends BaseTest {
 
@@ -14,7 +16,7 @@ public class UserBalanceTest extends BaseTest {
     private UserBalanceService userBalanceService;
 
     @Test
-    public void testAddUserBalanceAndUser() throws IOException {
+    public void testAddUserBalanceAndUser() throws Exception {
         userBalanceService.addUserBalanceAndUser(new User("peter",18,"london"),new BigDecimal(1000));
     }
 
