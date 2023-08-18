@@ -7,6 +7,9 @@
         insert into user(age,name,address) value(#{age},#{name},#{address});
     </insert>
 
+    <select id="queryUserByNameAndAge" parameterType="map" resultType="com.example.presentation.model.User">
+        select * from user;
+    </select>
 
 
 </mapper>

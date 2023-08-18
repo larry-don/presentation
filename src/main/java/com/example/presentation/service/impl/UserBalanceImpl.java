@@ -41,7 +41,7 @@ public class UserBalanceImpl implements UserBalanceService {
         userBalance.setName(user.getName());
         userBalance.setBalance(balance);
         userBalanceRepository.insert(userBalance);
-        int i = 1/0;
+        //int i = 1/0;
         log.info("[addUserBalanceAndUser] end!!!");
     }
 }
