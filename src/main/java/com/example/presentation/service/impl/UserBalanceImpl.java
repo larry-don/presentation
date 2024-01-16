@@ -1,5 +1,6 @@
 package com.example.presentation.service.impl;
 
+import com.example.presentation.annotaion.OperateLog;
 import com.example.presentation.model.User;
 import com.example.presentation.model.UserBalance;
 import com.example.presentation.repository.UserBalanceRepository;
@@ -26,7 +27,7 @@ public class UserBalanceImpl implements UserBalanceService {
     private UserBalanceRepository userBalanceRepository;
 
     @Override
-    public void addUserBalance(UserBalance userBalance){
+    public void addUserBalance(UserBalance userBalance) {
         userBalanceRepository.insert(userBalance);
     }
 
@@ -44,4 +45,6 @@ public class UserBalanceImpl implements UserBalanceService {
         //int i = 1/0;
         log.info("[addUserBalanceAndUser] end!!!");
     }
+
+
 }

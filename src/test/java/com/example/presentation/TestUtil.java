@@ -3,10 +3,10 @@ package com.example.presentation;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class TestUtil {
 
@@ -141,7 +141,11 @@ public class TestUtil {
 
     @Test
     public void test03(){
-
+        String name = "pig";
+        List<String> list = Arrays.asList("monkey", "pig", "human");
+        String s = Optional.ofNullable(list)
+                .map(l -> l.stream().filter(item -> item.equals(name)).findAny().orElse(null)).orElse(null);
+        Assertions.assertEquals("pig",s);
     }
 
 

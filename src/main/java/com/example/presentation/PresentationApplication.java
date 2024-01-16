@@ -1,7 +1,6 @@
 package com.example.presentation;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -21,6 +20,10 @@ public class PresentationApplication {
         container.put("name","bob");
         container.put("gender","male");
         Map<String,String> map = new HashMap<>(container);
+
+        System.out.println("启动完成啦啦啦啦啦");
+
+
 
     }
 
