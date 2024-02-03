@@ -12,14 +12,14 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/test")
-public class TestController {
+public class WriteTestController {
 
     private final TestService testService;
 
     private UserService userService;
 
     @Autowired
-    public TestController(TestService testService) {
+    public WriteTestController(TestService testService) {
         this.testService = testService;
     }
 

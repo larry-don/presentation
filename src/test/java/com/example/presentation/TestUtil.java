@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class TestUtil {
@@ -102,14 +104,14 @@ public class TestUtil {
     }
 
     @Test
-    public void testOutter(){
+    public void testOutter() {
         ChildOutter childOutter = new ChildOutter();
         Outter.Inner inner = childOutter.getInner();
         inner.printTest();
     }
 
     @Test
-    public void testSet(){
+    public void testSet() {
         List<String> list1 = Arrays.asList("苹果", "香蕉", "樱桃");
         List<String> list2 = Arrays.asList("苹果", "香蕉", "樱桃");
         List<String> collect = list1.stream().filter(s -> s.equals("11")).collect(Collectors.toList());
@@ -119,20 +121,20 @@ public class TestUtil {
     }
 
     @Test
-    public void test002(){
-        Map<Integer,String> map = new HashMap<>();
-        map.put(0,"0");
-        map.put(1,"1");
-        map.put(2,"2");
-        map.put(3,"3");
-        map.put(4,"5");
-        map.put(5,null);
-        map.put(6,null);
+    public void test002() {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(0, "0");
+        map.put(1, "1");
+        map.put(2, "2");
+        map.put(3, "3");
+        map.put(4, "5");
+        map.put(5, null);
+        map.put(6, null);
 
         List<String> list = new ArrayList<>();
-        map.forEach((key,val)->{
-            System.out.println(key+" "+val);
-            list.add(key,val);
+        map.forEach((key, val) -> {
+            System.out.println(key + " " + val);
+            list.add(key, val);
         });
         System.out.println(list.size());
         System.out.println(list);
@@ -140,14 +142,31 @@ public class TestUtil {
     }
 
     @Test
-    public void test03(){
+    public void test03() {
         String name = "pig";
         List<String> list = Arrays.asList("monkey", "pig", "human");
         String s = Optional.ofNullable(list)
                 .map(l -> l.stream().filter(item -> item.equals(name)).findAny().orElse(null)).orElse(null);
-        Assertions.assertEquals("pig",s);
+        Assertions.assertEquals("pig", s);
     }
 
+    @Test
+    public void test04() {
+        Pattern pattern = Pattern.compile("RegExr");
+//        RegExr
+        Matcher matcher1 = pattern.matcher("RegExr");
+        Matcher matcher2 = pattern.matcher("Text");
+        System.out.println("matcher1.matches() is: " + matcher1.matches());
+        System.out.println("matcher1.find() is: " + matcher1.find());
+        System.out.println("matcher1.group() is: " + matcher1.group());
+
+        System.out.println("matcher2.matches() is: " + matcher2.matches());
+        System.out.println("matcher2.find() is: " + matcher2.find());
+        System.out.println("matcher2.group() is: " + matcher2.group());
+
+
+
+    }
 
 
 }
