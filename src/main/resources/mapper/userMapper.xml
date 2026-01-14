@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.presentation.repository.user">
+<mapper namespace="com.example.presentation.repository.UserRepository">
 
 
     <insert id="addUser" parameterType="com.example.presentation.model.User">
-        insert into user(age,name,address) value(age,name,address);
+        insert into user(age,name,address) value(#{age},#{name},#{address});
     </insert>
 
+    <select id="queryUserByNameAndAge" parameterType="map" resultType="com.example.presentation.model.User">
+        select * from user;
+    </select>
 
 
 </mapper>
