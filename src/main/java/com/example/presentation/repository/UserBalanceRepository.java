@@ -1,16 +1,19 @@
 package com.example.presentation.repository;
 
-import com.example.presentation.model.User;
 import com.example.presentation.model.UserBalance;
-import com.example.presentation.util.SqlHelper;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class UserBalanceRepository {
 
-    public void insert(UserBalance userBalance) throws IOException {
-        SqlHelper.getSqlSession().insert("com.example.presentation.model.UserBalance.addUserBalance",userBalance);
+    @Autowired
+    private SqlSessionTemplate sqlSessionTemplate;
+
+    @Transactional
+    public void insert(UserBalance userBalance) {
+        sqlSessionTemplate.insert("com.example.presentation.repository.UserBalanceRepository.addUserBalance", userBalance);
     }
 }

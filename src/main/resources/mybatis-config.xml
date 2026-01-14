@@ -6,9 +6,11 @@
     </typeAliases>
     <environments default="development">
         <environment id="development">
-            <transactionManager type="JDBC"/>
+            <transactionManager type="org.mybatis.spring.transaction.SpringManagedTransactionFactory" >
+                <property name="transactionManager" value="transactionManager"/>
+            </transactionManager>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url"
                           value="jdbc:mysql://localhost:3306/presentation?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8"/>
                 <property name="username" value="root"/>
@@ -17,4 +19,9 @@
         </environment>
     </environments>
 
+    <mappers>
+        <mapper resource="mapper/userBalanceMapper.xml"></mapper>
+        <mapper resource="mapper/userMapper.xml"></mapper>
+<!--        <package name="com.example.presentation.repository"/>-->
+    </mappers>
 </configuration>
